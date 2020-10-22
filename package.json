@@ -1,0 +1,52 @@
+{
+  "name": "truebit",
+  "version": "1.0.8",
+  "description": "Client software for interacting with the Truebit system",
+  "bin": {
+    "truebit-os": "cli/index.js"
+  },
+  "pkg": {
+    "scripts": "./jit-runner/jit.js",
+    "assets": [
+      "./wasm-client/secret",
+      "./wasm-client/mainnet.json",
+      "./wasm-client/goerli.json",
+      "./wasm-client/rinkeby.json",
+      "./node_modules/figlet/fonts/Standard.flf"
+    ]
+  },
+  "scripts": {
+    "fixperms": "chmod 755 wasm-client/install.sh compile.sh",
+    "deps": "./wasm-client/install.sh",
+    "test": "mocha",
+    "truebit": "node ./cli/index.js",
+    "coverage": "nyc mocha"
+  },
+  "keywords": [
+    "to",
+    "the",
+    "moon"
+  ],
+  "author": "hswick",
+  "license": "none",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "ethereumjs-util": "^5.2.0",
+    "figlet": "^1.2.0",
+    "ipfs-api": "^14.3.7",
+    "ipfs-http-client": "^30.1.0",
+    "minimist": "^1.2.0",
+    "truebit-util": "^1.0.1",
+    "truffle-contract": "^3.0.5",
+    "vorpal": "^1.12.0",
+    "web3": "^1.2.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "@openzeppelin/cli": "^2.8.2",
+    "@openzeppelin/contracts-ethereum-package": "^3.0.0",
+    "browserify": "^16.5.2",
+    "fs-extra": "^6.0.1",
+    "wasm-metering-tb": "^0.2.1"
+  }
+}
